@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my todo app</title>
+  </head>
+  <body>
+    <input id="me" type="text" />
+    <button onclick="myg()">press me</button>
+
+    <div id="my-list"></div>
+    <script>
+      let discipline = ["be humble", "be simple", "stay focused"];
+
+      render();
+      function render() {
+        document.getElementById("my-list").innerHTML = "";
+
+        discipline.forEach(function (upps) {
+          let element = document.createElement("div");
+          element.innerText = upps;
+          let myr = document.getElementById("my-list");
+          myr.appendChild(element);
+        });
+      }
+
+      function myg() {
+        let textbox = document.getElementById("me");
+        let myu = textbox.value;
+        discipline.push(myu);
+
+        render();
+      }
+    </script>
+  </body>
+</html>
